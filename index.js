@@ -23,9 +23,21 @@ const handleSquareClick = (e) => {
   e.target.classList.add("square-color");
 };
 
+// Handle hover
+const handleSquareMouseEnter = (e) => {
+  e.target.classList.add("square-color-hover");
+};
+
+// Handle hover
+const handleSquareMouseLeave = (e) => {
+  e.target.classList.remove("square-color-hover");
+};
+
 // Add event listener to clicked square and change color
 squares.forEach((element) => {
   element.addEventListener("click", handleSquareClick);
+  element.addEventListener("mouseenter", handleSquareMouseEnter);
+  element.addEventListener("mouseleave", handleSquareMouseLeave);
 });
 
 body.appendChild(grid);
