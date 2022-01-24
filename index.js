@@ -1,5 +1,11 @@
 let body = document.querySelector("body");
 
+let btn = document.createElement("button");
+btn.textContent = "Clear Grid";
+btn.classList.add("btn");
+btn.setAttribute("type", "button");
+body.appendChild(btn);
+
 let grid = document.createElement("div");
 grid.classList.add("grid");
 

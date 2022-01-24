@@ -17,3 +17,8 @@
 .square-color-hover {
   background-color: black;
 }
+
+.btn {
+  padding: 1rem;
+  border: none;
+}
