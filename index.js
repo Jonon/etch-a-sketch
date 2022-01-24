@@ -1,4 +1,4 @@
-let body = document.querySelector(".container");
+let body = document.querySelector("body");
 
 let grid = document.createElement("div");
 grid.classList.add("grid");
@@ -17,5 +17,15 @@ function createSquare(maxSquares, grid) {
 }
 
 let squares = createSquare(256, grid);
+
+// Target square div
+const handleSquareClick = (e) => {
+  e.target.classList.add("square-color");
+};
+
+// Add event listener to clicked square and change color
+squares.forEach((element) => {
+  element.addEventListener("click", handleSquareClick);
+});
 
 body.appendChild(grid);
