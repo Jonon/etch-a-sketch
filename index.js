@@ -4,6 +4,14 @@ let btn = document.createElement("button");
 btn.textContent = "Clear Grid";
 btn.classList.add("btn");
 btn.setAttribute("type", "button");
+
+// Clear grid
+btn.addEventListener("click", () => {
+  squares.forEach((element) => {
+    element.classList.remove("square-color");
+  });
+});
+
 body.appendChild(btn);
 
 let grid = document.createElement("div");
