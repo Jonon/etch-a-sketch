@@ -1,3 +1,7 @@
+:root {
+  --color-square: #000000;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
@@ -11,11 +15,11 @@
 }
 
 .square-color {
-  background-color: black;
+  background-color: var(--color-square);
 }
 
 .square-color-hover {
-  background-color: black;
+  background-color: var(--color-square);
 }
 
 .btn {
