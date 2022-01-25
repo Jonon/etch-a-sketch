@@ -49,32 +49,37 @@ function createSquare(maxSquares, grid) {
     grid.appendChild(square);
     // Push all new squares into an array called squares
     squares.push(square);
+    handleSquareStyle(squares);
   }
   return squares;
 }
 
-let squares = createSquare(256, grid);
+//let squares = createSquare(number, grid);
 
-// Target square div
-const handleSquareClick = (e) => {
-  e.target.classList.add("square-color");
-};
+function handleSquareStyle(arrayOfSquares) {
+  // Target square div
+  const handleSquareClick = (e) => {
+    e.target.classList.add("square-color");
+  };
 
-// Handle hover
-const handleSquareMouseEnter = (e) => {
-  e.target.classList.add("square-color-hover");
-};
+  // Handle hover
+  const handleSquareMouseEnter = (e) => {
+    e.target.classList.add("square-color-hover");
+  };
 
-// Handle hover
-const handleSquareMouseLeave = (e) => {
-  e.target.classList.remove("square-color-hover");
-};
+  // Handle hover
+  const handleSquareMouseLeave = (e) => {
+    e.target.classList.remove("square-color-hover");
+  };
 
-// Add event listener to clicked square and change color
-squares.forEach((element) => {
-  element.addEventListener("click", handleSquareClick);
-  element.addEventListener("mouseenter", handleSquareMouseEnter);
-  element.addEventListener("mouseleave", handleSquareMouseLeave);
-});
+  // Add event listener to clicked square and change color
+  arrayOfSquares.forEach((element) => {
+    element.addEventListener("click", handleSquareClick);
+    element.addEventListener("mouseenter", handleSquareMouseEnter);
+    element.addEventListener("mouseleave", handleSquareMouseLeave);
+  });
+}
+
+handleSquareStyle(squares);
 
 body.appendChild(grid);
