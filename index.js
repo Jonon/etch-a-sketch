@@ -5,12 +5,20 @@ btn.textContent = "Clear Grid";
 btn.classList.add("btn");
 btn.setAttribute("type", "button");
 
-// Clear grid
-btn.addEventListener("click", () => {
+function clearGrid() {
   squares.forEach((element) => {
     element.classList.remove("square-color");
   });
-});
+}
+
+function newGrid() {
+  btn.addEventListener("click", () => {
+    // Clear grid
+    clearGrid();
+  });
+}
+
+console.log(newGrid());
 
 body.appendChild(btn);
 
