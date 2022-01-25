@@ -20,25 +20,24 @@ function createGridNumber() {
   return number;
 }
 
-//let number = createGridNumber();
+btnClickHandler = () => {
+  // Clear grid
+  clearGrid();
+  // chose new grid number
+  let gridNumber = createGridNumber();
+  // CreateSquares
+  let squares = createSquare(gridNumber, grid);
+  handleSquareStyle(squares);
+};
 
 function newGrid() {
-  btn.addEventListener("click", () => {
-    // Clear grid
-    clearGrid();
-    // chose new grid number
-    let gridNumber = createGridNumber();
-    console.log(gridNumber);
-    createSquare(gridNumber, grid);
-  });
+  btn.addEventListener("click", btnClickHandler);
+  // Defaultt grid
+  let squares = createSquare(256, grid);
+  return squares;
 }
 
-console.log(newGrid());
-
-body.appendChild(btn);
-
-let grid = document.createElement("div");
-grid.classList.add("grid");
+let squares = newGrid();
 
 function createSquare(maxSquares, grid) {
   let squares = [];
