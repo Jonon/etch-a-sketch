@@ -6,6 +6,7 @@ let btn = document.createElement("button");
 btn.textContent = "Clear Grid";
 btn.classList.add("btn");
 btn.setAttribute("type", "button");
+body.appendChild(btn);
 
 function clearGrid() {
   squares.forEach((element) => {
