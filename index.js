@@ -11,10 +11,20 @@ function clearGrid() {
   });
 }
 
+function createGridNumber() {
+  let number = prompt("Chose grid number");
+  number = Number(number);
+  return number;
+}
+
+//let number = createGridNumber();
+
 function newGrid() {
   btn.addEventListener("click", () => {
     // Clear grid
     clearGrid();
+    // chose new grid number
+    let gridNumber = createGridNumber();
   });
 }
 
