@@ -19,6 +19,8 @@ function createGridNumber() {
   number = Number(number);
   // Set gridNumber in gloabal css variable
   document.documentElement.style.setProperty("--square-number", number);
+  // Caclulate number
+  number = number * number;
   return number;
 }
 
