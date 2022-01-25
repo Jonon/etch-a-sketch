@@ -17,6 +17,8 @@ function clearGrid() {
 function createGridNumber() {
   let number = prompt("Chose grid number");
   number = Number(number);
+  // Set gridNumber in gloabal css variable
+  document.documentElement.style.setProperty("--square-number", number);
   return number;
 }
 
