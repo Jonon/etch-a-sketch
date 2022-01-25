@@ -53,8 +53,6 @@ function createSquare(maxSquares, grid) {
   return squares;
 }
 
-//let squares = createSquare(number, grid);
-
 function handleSquareStyle(arrayOfSquares) {
   // Target square div
   const handleSquareClick = (e) => {
