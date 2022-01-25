@@ -10,7 +10,7 @@ body.appendChild(btn);
 
 function clearGrid() {
   squares.forEach((element) => {
-    element.classList.remove("square-color");
+    element.remove();
   });
 }
 
