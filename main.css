@@ -1,11 +1,12 @@
 :root {
   --color-square: #000000;
+  --square-number: 16;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(16, 1fr);
+  grid-template-columns: repeat(var(--square-number), 1fr);
+  grid-template-rows: repeat(var(--square-number), 1fr);
 }
 
 .square {
