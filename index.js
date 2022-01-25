@@ -25,6 +25,8 @@ function newGrid() {
     clearGrid();
     // chose new grid number
     let gridNumber = createGridNumber();
+    console.log(gridNumber);
+    createSquare(gridNumber, grid);
   });
 }
 
