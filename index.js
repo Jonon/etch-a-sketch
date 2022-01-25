@@ -1,4 +1,6 @@
 let body = document.querySelector("body");
+let grid = document.createElement("div");
+grid.classList.add("grid");
 
 let btn = document.createElement("button");
 btn.textContent = "Clear Grid";
