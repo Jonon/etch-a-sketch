@@ -12,11 +12,11 @@ sliderGridSize.setAttribute("value", 32);
 
 body.appendChild(sliderGridSize);
 
-function clearGrid() {
-  squares.forEach((element) => {
+let clearGrid = (squaresToremove) => {
+  squaresToremove.forEach((element) => {
     element.remove();
   });
-}
+};
 
 function createGridNumber() {
   let number = prompt("Chose grid number");
@@ -29,13 +29,16 @@ function createGridNumber() {
 }
 
 btnClickHandler = () => {
+  //Select all squares
+  let selectSquares = document.querySelectorAll(".square");
   // Clear grid
-  clearGrid();
+  clearGrid(selectSquares);
   // chose new grid number
   let gridNumber = createGridNumber();
   // CreateSquares
   let squares = createSquare(gridNumber, grid);
   handleSquareStyle(squares);
+  return squares;
 };
 
 function newGrid() {
