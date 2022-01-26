@@ -88,6 +88,4 @@ function handleSquareStyle(arrayOfSquares) {
   });
 }
 
-handleSquareStyle(squares);
-
 body.appendChild(grid);
