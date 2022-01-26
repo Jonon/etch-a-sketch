@@ -6,9 +6,9 @@ grid.classList.add("grid");
 let sliderGridSize = document.createElement("input");
 sliderGridSize.classList.add("btn");
 sliderGridSize.setAttribute("type", "range");
-sliderGridSize.setAttribute("min", "0");
+sliderGridSize.setAttribute("min", "1");
 sliderGridSize.setAttribute("max", "64");
-sliderGridSize.setAttribute("value", "32");
+sliderGridSize.setAttribute("value", 32);
 
 body.appendChild(sliderGridSize);
 
