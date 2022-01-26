@@ -19,7 +19,8 @@ let clearGrid = (squaresToremove) => {
 };
 
 function createGridNumber() {
-  let number = prompt("Chose grid number");
+  let gridSize = sliderGridSize.value;
+  let number = gridSize;
   number = Number(number);
   // Set gridNumber in gloabal css variable
   document.documentElement.style.setProperty("--square-number", number);
@@ -42,7 +43,7 @@ btnClickHandler = () => {
 };
 
 function newGrid() {
-  sliderGridSize.addEventListener("click", btnClickHandler);
+  sliderGridSize.addEventListener("change", btnClickHandler);
   // Defaultt grid
   let squares = createSquare(256, grid);
   return squares;
