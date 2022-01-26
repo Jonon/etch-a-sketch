@@ -2,11 +2,15 @@ let body = document.querySelector("body");
 let grid = document.createElement("div");
 grid.classList.add("grid");
 
-let btn = document.createElement("button");
-btn.textContent = "Clear Grid";
-btn.classList.add("btn");
-btn.setAttribute("type", "button");
-body.appendChild(btn);
+// Create slider to change grid Size
+let sliderGridSize = document.createElement("input");
+sliderGridSize.classList.add("btn");
+sliderGridSize.setAttribute("type", "range");
+sliderGridSize.setAttribute("min", "0");
+sliderGridSize.setAttribute("max", "64");
+sliderGridSize.setAttribute("value", "32");
+
+body.appendChild(sliderGridSize);
 
 function clearGrid() {
   squares.forEach((element) => {
@@ -35,7 +39,7 @@ btnClickHandler = () => {
 };
 
 function newGrid() {
-  btn.addEventListener("click", btnClickHandler);
+  sliderGridSize.addEventListener("click", btnClickHandler);
   // Defaultt grid
   let squares = createSquare(256, grid);
   return squares;
