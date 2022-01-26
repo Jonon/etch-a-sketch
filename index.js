@@ -48,7 +48,7 @@ function newGrid() {
   return squares;
 }
 
-let squares = newGrid();
+newGrid();
 
 function createSquare(maxSquares, grid) {
   let squares = [];
