@@ -9,7 +9,10 @@ title.textContent = "Etch-A-Sketch";
 body.appendChild(title);
 
 // Create slider to change grid Size
-let sliderContainer = document.createElement("div");
+let settings = document.createElement("div");
+settings.classList.add("settings");
+let controller = document.createElement("div");
+controller.classList.add("controller");
 
 let sliderGridSize = document.createElement("input");
 sliderGridSize.classList.add("btn");
@@ -20,9 +23,11 @@ sliderGridSize.setAttribute("value", 32);
 
 let sliderHeader = document.createElement("h2");
 sliderHeader.textContent = sliderGridSize.value;
-sliderContainer.appendChild(sliderHeader);
-sliderContainer.appendChild(sliderGridSize);
-wrapper.appendChild(sliderContainer);
+controller.appendChild(sliderHeader);
+controller.appendChild(sliderGridSize);
+
+settings.appendChild(controller);
+wrapper.appendChild(settings);
 
 let handleSliderValue = () => {
   let number = sliderGridSize.value;
