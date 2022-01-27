@@ -10,10 +10,16 @@
   height: 80vh;
 }
 
-.slider-container {
+.settings {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 500px;
+  width: 12rem;
+  background: rgba(72, 144, 209, 0.11);
+  border-radius: 3px;
+  margin-right: 5rem;
+}
+
+.controller {
 }
 
 .grid {
