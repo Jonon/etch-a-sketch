@@ -12,11 +12,15 @@ body.appendChild(title);
 // Create slider to change grid Size
 let settings = document.createElement("div");
 settings.classList.add("settings");
+
+let rainbowbutton = document.createElement("button");
+rainbowbutton.textContent = "Rainbow";
+rainbowbutton.classList.add("btn");
+
 let controller = document.createElement("div");
 controller.classList.add("controller");
 
 let sliderGridSize = document.createElement("input");
-sliderGridSize.classList.add("btn");
 sliderGridSize.setAttribute("type", "range");
 sliderGridSize.setAttribute("min", "1");
 sliderGridSize.setAttribute("max", "64");
@@ -27,7 +31,7 @@ sliderHeader.classList.add("grid-number");
 sliderHeader.textContent = sliderGridSize.value;
 controller.appendChild(sliderHeader);
 controller.appendChild(sliderGridSize);
-
+settings.appendChild(rainbowbutton);
 settings.appendChild(controller);
 wrapper.appendChild(settings);
 
