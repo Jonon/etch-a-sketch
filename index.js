@@ -1,4 +1,5 @@
 let body = document.querySelector("body");
+let wrapper = document.createElement("div");
 let grid = document.createElement("div");
 grid.classList.add("grid");
 
@@ -20,7 +21,7 @@ let sliderHeader = document.createElement("h2");
 sliderHeader.textContent = sliderGridSize.value;
 sliderContainer.appendChild(sliderHeader);
 sliderContainer.appendChild(sliderGridSize);
-body.appendChild(sliderContainer);
+wrapper.appendChild(sliderContainer);
 
 let handleSliderValue = () => {
   let number = sliderGridSize.value;
@@ -106,4 +107,5 @@ function handleSquareStyle(arrayOfSquares) {
   });
 }
 
-body.appendChild(grid);
+wrapper.appendChild(grid);
+body.appendChild(wrapper);
