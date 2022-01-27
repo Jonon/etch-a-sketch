@@ -1,6 +1,7 @@
 :root {
   --color-square: #000000;
   --square-number: 16;
+  --font-color: #549ee2;
 }
 
 .wrapper-center {
@@ -25,7 +26,7 @@
   text-align: center;
   font-family: "Ultra", serif;
   font-size: 4em;
-  color: #549ee2;
+  color: var(--font-color);
 }
 
 .grid-number {
