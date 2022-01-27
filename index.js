@@ -6,6 +6,7 @@ grid.classList.add("grid");
 
 let title = document.createElement("h1");
 title.textContent = "Etch-A-Sketch";
+title.classList.add("title");
 body.appendChild(title);
 
 // Create slider to change grid Size
