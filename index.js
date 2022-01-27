@@ -22,6 +22,11 @@ sliderContainer.appendChild(sliderHeader);
 sliderContainer.appendChild(sliderGridSize);
 body.appendChild(sliderContainer);
 
+let handleSliderValue = () => {
+  let number = sliderGridSize.value;
+  return number;
+};
+
 let clearGrid = (squaresToremove) => {
   squaresToremove.forEach((element) => {
     element.remove();
@@ -29,7 +34,9 @@ let clearGrid = (squaresToremove) => {
 };
 
 function createGridNumber() {
-  let gridSize = sliderGridSize.value;
+  let gridSize = handleSliderValue();
+  sliderHeader.textContent = gridSize;
+
   let number = gridSize;
   number = Number(number);
   // Set gridNumber in gloabal css variable
@@ -39,7 +46,7 @@ function createGridNumber() {
   return number;
 }
 
-btnClickHandler = () => {
+sliderGridSizeChangeHandler = () => {
   //Select all squares
   let selectSquares = document.querySelectorAll(".square");
   // Clear grid
@@ -53,7 +60,7 @@ btnClickHandler = () => {
 };
 
 function newGrid() {
-  sliderGridSize.addEventListener("change", btnClickHandler);
+  sliderGridSize.addEventListener("change", sliderGridSizeChangeHandler);
   // Defaultt grid
   let squares = createSquare(256, grid);
   return squares;
