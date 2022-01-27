@@ -1,5 +1,6 @@
 let body = document.querySelector("body");
 let wrapper = document.createElement("div");
+wrapper.classList.add("wrapper-center");
 let grid = document.createElement("div");
 grid.classList.add("grid");
 
