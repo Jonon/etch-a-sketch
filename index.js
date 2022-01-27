@@ -17,6 +17,10 @@ let rainbowbutton = document.createElement("button");
 rainbowbutton.textContent = "Rainbow";
 rainbowbutton.classList.add("btn");
 
+let ShadeButton = document.createElement("button");
+ShadeButton.textContent = "Shade";
+ShadeButton.classList.add("btn");
+
 let controller = document.createElement("div");
 controller.classList.add("controller");
 
@@ -32,6 +36,7 @@ sliderHeader.textContent = sliderGridSize.value;
 controller.appendChild(sliderHeader);
 controller.appendChild(sliderGridSize);
 settings.appendChild(rainbowbutton);
+settings.appendChild(ShadeButton);
 settings.appendChild(controller);
 wrapper.appendChild(settings);
 
