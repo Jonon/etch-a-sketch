@@ -2,7 +2,13 @@ let body = document.querySelector("body");
 let grid = document.createElement("div");
 grid.classList.add("grid");
 
+let title = document.createElement("h1");
+title.textContent = "Etch-A-Sketch";
+body.appendChild(title);
+
 // Create slider to change grid Size
+let sliderContainer = document.createElement("div");
+
 let sliderGridSize = document.createElement("input");
 sliderGridSize.classList.add("btn");
 sliderGridSize.setAttribute("type", "range");
