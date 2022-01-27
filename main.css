@@ -12,6 +12,8 @@
 
 .settings {
   display: flex;
+  justify-content: center;
+  align-items: center;
   height: 500px;
   width: 12rem;
   background: rgba(72, 144, 209, 0.11);
