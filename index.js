@@ -16,7 +16,11 @@ sliderGridSize.setAttribute("min", "1");
 sliderGridSize.setAttribute("max", "64");
 sliderGridSize.setAttribute("value", 32);
 
-body.appendChild(sliderGridSize);
+let sliderHeader = document.createElement("h2");
+sliderHeader.textContent = sliderGridSize.value;
+sliderContainer.appendChild(sliderHeader);
+sliderContainer.appendChild(sliderGridSize);
+body.appendChild(sliderContainer);
 
 let clearGrid = (squaresToremove) => {
   squaresToremove.forEach((element) => {
