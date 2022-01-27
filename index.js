@@ -22,7 +22,7 @@ sliderGridSize.setAttribute("min", "1");
 sliderGridSize.setAttribute("max", "64");
 sliderGridSize.setAttribute("value", 32);
 
-let sliderHeader = document.createElement("h2");
+let sliderHeader = document.createElement("p");
 sliderHeader.classList.add("grid-number");
 sliderHeader.textContent = sliderGridSize.value;
 controller.appendChild(sliderHeader);
