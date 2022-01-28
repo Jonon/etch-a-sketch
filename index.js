@@ -78,7 +78,6 @@ sliderGridSizeChangeHandler = () => {
   let gridNumber = createGridNumber();
   // CreateSquares
   let squares = createSquare(gridNumber, grid);
-  handleSquareStyle(squares);
   return squares;
 };
 
