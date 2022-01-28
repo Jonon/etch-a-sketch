@@ -105,9 +105,15 @@ function createSquare(maxSquares, grid) {
 }
 
 function handleSquareStyle(arrayOfSquares) {
+  // Get color value
+  let getColorValue = () => {
+    return (squareColor = colorPicker.value);
+  };
+
   // Target square div
   const handleSquareClick = (e) => {
-    e.target.classList.add("square-color");
+    getColorValue();
+    e.target.style.backgroundColor = squareColor;
   };
 
   // Handle hover
