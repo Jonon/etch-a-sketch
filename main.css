@@ -37,6 +37,18 @@
   color: var(--font-color);
 }
 
+.color-picker {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin-bottom: 1rem;
+  border: none;
+  width: 80%;
+  height: 3rem;
+  background-color: #549ee2;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 .btn {
   border: 2px solid #549ee2;
   border-radius: 5px;
