@@ -99,10 +99,9 @@ function createSquare(maxSquares, grid) {
     grid.appendChild(square);
     // Push all new squares into an array called squares
     squares.push(square);
-    handleSquareStyle(squares);
+    // Default square
+    handleSquareStyle(squares, "black");
   }
-  return squares;
-}
 
 function handleSquareStyle(arrayOfSquares) {
   // Get color value
