@@ -17,9 +17,9 @@ let colorPicker = document.createElement("input");
 colorPicker.setAttribute("type", "color");
 colorPicker.classList.add("color-picker");
 
-let rainbowbutton = document.createElement("button");
-rainbowbutton.textContent = "Rainbow";
-rainbowbutton.classList.add("btn");
+let rainbowButton = document.createElement("button");
+rainbowButton.textContent = "Rainbow";
+rainbowButton.classList.add("btn");
 
 let ShadeButton = document.createElement("button");
 ShadeButton.textContent = "Shade";
