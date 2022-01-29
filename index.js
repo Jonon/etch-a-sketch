@@ -40,7 +40,7 @@ sliderHeader.textContent = sliderGridSize.value;
 controller.appendChild(sliderHeader);
 controller.appendChild(sliderGridSize);
 settings.appendChild(colorPicker);
-settings.appendChild(rainbowbutton);
+settings.appendChild(rainbowButton);
 settings.appendChild(ShadeButton);
 settings.appendChild(controller);
 wrapper.appendChild(settings);
