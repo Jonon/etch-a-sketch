@@ -32,7 +32,7 @@ let sliderGridSize = document.createElement("input");
 sliderGridSize.setAttribute("type", "range");
 sliderGridSize.setAttribute("min", "1");
 sliderGridSize.setAttribute("max", "64");
-sliderGridSize.setAttribute("value", 32);
+sliderGridSize.setAttribute("value", 16);
 
 let sliderHeader = document.createElement("p");
 sliderHeader.classList.add("grid-number");
