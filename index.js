@@ -103,15 +103,29 @@ function createSquare(maxSquares, grid) {
     handleSquareStyle(squares, "black");
   }
 
-function handleSquareStyle(arrayOfSquares) {
+  //let squareColor;
+  let squaresWithNewColor;
+
   // Get color value
   let getColorValue = () => {
-    return (squareColor = colorPicker.value);
+    let squareColor = colorPicker.value;
+    squaresWithNewColor = handleSquareStyle(squares, squareColor);
+    return squaresWithNewColor;
   };
 
+  let getRandomColor = () => {
+    let squareColor = "purple";
+    squaresWithNewColor = handleSquareStyle(squares, squareColor);
+    return squaresWithNewColor;
+  };
+
+  rainbowButton.addEventListener("click", getRandomColor);
+  colorPicker.addEventListener("change", getColorValue);
+}
+
+function handleSquareStyle(arrayOfSquares, squareColor) {
   // Target square div
   const handleSquareClick = (e) => {
-    getColorValue();
     e.target.style.backgroundColor = squareColor;
   };
 
