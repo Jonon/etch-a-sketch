@@ -125,7 +125,6 @@ let colorMode = "normal";
 
 let getColorMode = (e) => {
   mode = e.target.getAttribute("mode");
-  console.log(mode);
   colorMode = mode;
   setColorMode(colorMode);
 };
