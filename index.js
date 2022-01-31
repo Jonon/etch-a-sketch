@@ -102,29 +102,51 @@ function createSquare(maxSquares, grid) {
     // Push all new squares into an array called squares
     squares.push(square);
     // Default square
-    handleSquareStyle(squares, "black");
+    handleSquareStyle(squares);
   }
+}
 
-  //let squareColor;
-  let squaresWithNewColor;
+let getColorPickerValue = () => {
+  let squareColor = colorPicker.value;
+  return squareColor;
+};
 
-  // Get color value
-  let getColorValue = () => {
-    let squareColor = colorPicker.value;
-    squaresWithNewColor = handleSquareStyle(squares, squareColor);
-    return squaresWithNewColor;
-  };
+let randomColor = () => {
+  function randomnumber() {
+    // Get a randnom number between 0 and 256
+    let randomNumber = Math.floor(Math.random() * 256);
+    return randomNumber;
+  }
+  let squareColor = `rgb(${randomnumber()}, ${randomnumber()}, ${randomnumber()})`;
+  return squareColor;
+};
 
 let colorMode = "normal";
 
-  rainbowButton.addEventListener("click", getRandomColor);
-  colorPicker.addEventListener("change", getColorValue);
-}
+let getColorMode = (e) => {
+  mode = e.target.getAttribute("mode");
+  console.log(mode);
+  colorMode = mode;
+  setColorMode(colorMode);
+};
 
-function handleSquareStyle(arrayOfSquares, squareColor) {
+let setColorMode = (mode) => {
+  colorMode = mode;
+};
+
+colorPicker.addEventListener("change", getColorMode);
+rainbowButton.addEventListener("click", getColorMode);
+
+function handleSquareStyle(arrayOfSquares) {
   // Target square div
   const handleSquareClick = (e) => {
-    e.target.style.backgroundColor = squareColor;
+    if (colorMode === "normal") {
+      e.target.style.backgroundColor = "black";
+    } else if (colorMode === "colorPicker") {
+      e.target.style.backgroundColor = getColorPickerValue();
+    } else if (colorMode === "rainbow") {
+      e.target.style.backgroundColor = randomColor();
+    }
   };
 
   // Handle hover
