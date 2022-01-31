@@ -62,6 +62,10 @@
   cursor: pointer;
 }
 
+.btn:hover {
+  box-shadow: 0px 0px 11px 10px rgba(33, 133, 226, 0.25);
+}
+
 .controller {
   display: flex;
   flex-direction: column;
