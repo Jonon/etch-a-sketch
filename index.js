@@ -4,47 +4,55 @@ wrapper.classList.add("wrapper-center");
 let grid = document.createElement("div");
 grid.classList.add("grid");
 
+// Create title
 let title = document.createElement("h1");
 title.textContent = "Etch-A-Sketch";
 title.classList.add("title");
 body.appendChild(title);
 
-// Create slider to change grid Size
+// Create settings Panel
 let settings = document.createElement("div");
 settings.classList.add("settings");
 
+// Create colorPicker
 let colorPicker = document.createElement("input");
 colorPicker.setAttribute("type", "color");
 colorPicker.setAttribute("mode", "colorPicker");
 colorPicker.classList.add("color-picker");
 
+// CreaterainbowButton
 let rainbowButton = document.createElement("button");
 rainbowButton.textContent = "Rainbow";
 rainbowButton.setAttribute("mode", "rainbow");
 rainbowButton.classList.add("btn");
 
+// Create ShaderButton
 let ShadeButton = document.createElement("button");
 ShadeButton.textContent = "Shade";
 ShadeButton.classList.add("btn");
 
-let controller = document.createElement("div");
-controller.classList.add("controller");
+// Create slidercontainer
+let sliderContainer = document.createElement("div");
+sliderContainer.classList.add("sliderContainer");
 
+// Create sliderGridSize
 let sliderGridSize = document.createElement("input");
 sliderGridSize.setAttribute("type", "range");
 sliderGridSize.setAttribute("min", "1");
 sliderGridSize.setAttribute("max", "64");
 sliderGridSize.setAttribute("value", 16);
 
+// Create SliderHeader
 let sliderHeader = document.createElement("p");
 sliderHeader.classList.add("grid-number");
 sliderHeader.textContent = sliderGridSize.value;
-controller.appendChild(sliderHeader);
-controller.appendChild(sliderGridSize);
+
+sliderContainer.appendChild(sliderHeader);
+sliderContainer.appendChild(sliderGridSize);
 settings.appendChild(colorPicker);
 settings.appendChild(rainbowButton);
 settings.appendChild(ShadeButton);
-settings.appendChild(controller);
+settings.appendChild(sliderContainer);
 wrapper.appendChild(settings);
 
 let handleSliderValue = () => {
