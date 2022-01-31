@@ -15,10 +15,12 @@ settings.classList.add("settings");
 
 let colorPicker = document.createElement("input");
 colorPicker.setAttribute("type", "color");
+colorPicker.setAttribute("mode", "colorPicker");
 colorPicker.classList.add("color-picker");
 
 let rainbowButton = document.createElement("button");
 rainbowButton.textContent = "Rainbow";
+rainbowButton.setAttribute("mode", "rainbow");
 rainbowButton.classList.add("btn");
 
 let ShadeButton = document.createElement("button");
@@ -113,11 +115,7 @@ function createSquare(maxSquares, grid) {
     return squaresWithNewColor;
   };
 
-  let getRandomColor = () => {
-    let squareColor = "purple";
-    squaresWithNewColor = handleSquareStyle(squares, squareColor);
-    return squaresWithNewColor;
-  };
+let colorMode = "normal";
 
   rainbowButton.addEventListener("click", getRandomColor);
   colorPicker.addEventListener("change", getColorValue);
