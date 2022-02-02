@@ -1,4 +1,16 @@
-let body = document.querySelector("body");
+let container = document.querySelector(".container");
+let grid = document.createElement("div");
+grid.classList.add("grid");
+container.appendChild(grid);
+for (let i = 1; i <= 256; i++) {
+  let square = document.createElement("div");
+  square.classList.add("square");
+  grid.appendChild(square);
+}
+
+/* let test = document.createElement("div");
+container.appendChild(test);
+
 let wrapper = document.createElement("div");
 wrapper.classList.add("wrapper-center");
 let grid = document.createElement("div");
@@ -101,19 +113,7 @@ function newGrid() {
 
 newGrid();
 
-function createSquare(maxSquares, grid) {
-  let squares = [];
 
-  for (let i = 1; i <= maxSquares; i++) {
-    let square = document.createElement("div");
-    square.classList.add("square");
-    grid.appendChild(square);
-    // Push all new squares into an array called squares
-    squares.push(square);
-    // Default square
-    handleSquareStyle(squares);
-  }
-}
 
 let getColorPickerValue = () => {
   let squareColor = colorPicker.value;
@@ -198,3 +198,4 @@ function handleSquareStyle(arrayOfSquares) {
 
 wrapper.appendChild(grid);
 body.appendChild(wrapper);
+ */
