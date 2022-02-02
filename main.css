@@ -4,6 +4,13 @@
   --font-color: #549ee2;
 }
 
+.title {
+  text-align: center;
+  font-family: "Ultra", serif;
+  font-size: 4em;
+  color: var(--font-color);
+}
+
 .wrapper {
   display: flex;
   justify-content: center;
@@ -59,12 +66,6 @@
   --font-color: #549ee2;
 }
 
-.title {
-  text-align: center;
-  font-family: "Ultra", serif;
-  font-size: 4em;
-  color: var(--font-color);
-}
 
 .grid-number {
   font-size: 1rem;
