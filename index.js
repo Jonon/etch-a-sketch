@@ -20,6 +20,9 @@ let setColorMode = (e) => {
   colorMode = e.target.getAttribute("colorMode");
 };
 
+let colorChoser = document.querySelector("#color-choser");
+colorChoser.addEventListener("click", setColorMode);
+
 selectGridSquares.forEach((square) => {});
 
 /* let test = document.createElement("div");
