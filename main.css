@@ -65,6 +65,12 @@
   box-shadow: 0px 0px 11px 10px rgba(33, 133, 226, 0.25);
 }
 
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(var(--square-number), 1fr);
@@ -99,25 +105,9 @@
   color: var(--font-color);
 }
 
-.color-picker {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  margin-bottom: 1rem;
-  border: none;
-  width: 80%;
-  height: 3rem;
-  background-color: #549ee2;
-  cursor: pointer;
-  border-radius: 5px;
-}
 
 
 
-.sliderContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 .square-color {
   background-color: var(--color-square);
