@@ -71,6 +71,13 @@
   align-items: center;
 }
 
+.grid-size-number {
+  font-size: 1rem;
+  line-height: 0rem;
+  font-family: "Ultra", serif;
+  color: var(--font-color);
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(var(--square-number), 1fr);
@@ -96,18 +103,6 @@
   --square-number: 16;
   --font-color: #549ee2;
 }
-
-
-.grid-number {
-  font-size: 1rem;
-  line-height: 0rem;
-  font-family: "Ultra", serif;
-  color: var(--font-color);
-}
-
-
-
-
 
 .square-color {
   background-color: var(--color-square);
