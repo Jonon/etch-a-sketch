@@ -40,6 +40,15 @@
   margin-bottom: 1rem;
 }
 
+.color-choser {
+  margin-bottom: 1rem;
+  border: none;
+  height: 3rem;
+  background-color: #549ee2;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(var(--square-number), 1fr);
