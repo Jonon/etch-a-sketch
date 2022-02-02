@@ -1,4 +1,4 @@
-const container = document.querySelector(".container");
+const container = document.querySelector(".wrapper");
 
 // Create Grid
 let grid = document.createElement("div");
@@ -13,6 +13,8 @@ for (let i = 1; i <= 256; i++) {
 
 // Select all element with class square
 let selectGridSquares = document.querySelectorAll(".square");
+
+selectGridSquares.forEach((square) => {});
 
 /* let test = document.createElement("div");
 container.appendChild(test);
