@@ -94,5 +94,6 @@
 }
 
 .square:hover {
-  background-color: black;
+  /* set to important to prevent inline style from overriding */
+  background-color: black !important;
 }
