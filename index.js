@@ -26,6 +26,8 @@ colorChoser.addEventListener("click", setColorMode);
 let rainbowButton = document.querySelector("#rainbow");
 rainbowButton.addEventListener("click", setColorMode);
 
+let shadeButton = document.querySelector("#shade");
+
 selectGridSquares.forEach((square) => {});
 
 /* let test = document.createElement("div");
