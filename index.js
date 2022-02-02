@@ -1,16 +1,20 @@
 const container = document.querySelector(".wrapper");
 
-// Create Grid
-let grid = document.createElement("div");
-grid.classList.add("grid");
+let createGridSquares = () => {
+  // Create Grid
+  let grid = document.createElement("div");
+  grid.classList.add("grid");
+  container.appendChild(grid);
 
-container.appendChild(grid);
-for (let i = 1; i <= 256; i++) {
-  let square = document.createElement("div");
-  square.classList.add("square");
-  grid.appendChild(square);
-}
+  for (let i = 1; i <= 256; i++) {
+    // Create squares
+    let square = document.createElement("div");
+    square.classList.add("square");
+    grid.appendChild(square);
+  }
+};
 
+createGridSquares();
 // Select all element with class square
 let selectGridSquares = document.querySelectorAll(".square");
 
