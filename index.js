@@ -29,6 +29,7 @@ rainbowButton.classList.add("btn");
 // Create ShaderButton
 let ShadeButton = document.createElement("button");
 ShadeButton.textContent = "Shade";
+ShadeButton.setAttribute("mode", "shade");
 ShadeButton.classList.add("btn");
 
 // Create slidercontainer
@@ -129,6 +130,24 @@ let randomColor = () => {
   return squareColor;
 };
 
+let countSteps = () => {
+  let timesclicked = 0;
+  let returnCount = () => {
+    timesclicked = timesclicked + 0.1;
+    console.log(timesclicked.toFixed(1));
+    return timesclicked.toFixed(1);
+  };
+  let shade = () => {
+    let test = returnCount();
+    let squareColor = `rgba(0, 0, 0, ${test})`;
+    console.log(squareColor);
+    return squareColor;
+  };
+  return shade;
+};
+
+let shadeValue = countSteps();
+
 let colorMode = "normal";
 
 let getColorMode = (e) => {
@@ -143,6 +162,7 @@ let setColorMode = (mode) => {
 
 colorPicker.addEventListener("change", getColorMode);
 rainbowButton.addEventListener("click", getColorMode);
+ShadeButton.addEventListener("click", getColorMode);
 
 function handleSquareStyle(arrayOfSquares) {
   // Target square div
@@ -153,6 +173,8 @@ function handleSquareStyle(arrayOfSquares) {
       e.target.style.backgroundColor = getColorPickerValue();
     } else if (colorMode === "rainbow") {
       e.target.style.backgroundColor = randomColor();
+    } else if (colorMode === "shade") {
+      e.target.style.backgroundColor = "grey";
     }
   };
 
