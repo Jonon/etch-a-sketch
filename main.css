@@ -96,19 +96,3 @@
 .square:hover {
   background-color: black;
 }
-
-/* 
-:root {
-  --color-square: #000000;
-  --square-number: 16;
-  --font-color: #549ee2;
-}
-
-.square-color {
-  background-color: var(--color-square);
-}
-
-.square-color-hover {
-  background-color: var(--color-square);
-}
- */
