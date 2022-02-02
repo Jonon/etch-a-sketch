@@ -49,6 +49,22 @@
   border-radius: 5px;
 }
 
+.btn {
+  border: 2px solid #549ee2;
+  border-radius: 5px;
+  padding: 0.3rem 0;
+  background: rgba(72, 144, 209, 0.11);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.2rem;
+  color: var(--font-color);
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: 0px 0px 11px 10px rgba(33, 133, 226, 0.25);
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(var(--square-number), 1fr);
@@ -95,22 +111,7 @@
   border-radius: 5px;
 }
 
-.btn {
-  border: 2px solid #549ee2;
-  border-radius: 5px;
-  padding: 0.3rem 0;
-  width: 80%;
-  background: rgba(72, 144, 209, 0.11);
-  font-family: "Ubuntu", sans-serif;
-  font-size: 1.2rem;
-  color: var(--font-color);
-  margin-bottom: 1rem;
-  cursor: pointer;
-}
 
-.btn:hover {
-  box-shadow: 0px 0px 11px 10px rgba(33, 133, 226, 0.25);
-}
 
 .sliderContainer {
   display: flex;
