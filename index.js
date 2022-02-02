@@ -16,6 +16,10 @@ let selectGridSquares = document.querySelectorAll(".square");
 
 let colorMode = "default";
 
+let setColorMode = (e) => {
+  colorMode = e.target.getAttribute("colorMode");
+};
+
 selectGridSquares.forEach((square) => {});
 
 /* let test = document.createElement("div");
