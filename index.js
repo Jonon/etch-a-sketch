@@ -20,6 +20,21 @@ let setColorMode = (e) => {
   colorMode = e.target.getAttribute("colorMode");
 };
 
+let getColorPickerValue = () => {
+  let squareColor = colorChoser.value;
+  return squareColor;
+};
+
+let randomColor = () => {
+  function randomnumber() {
+    // Get a randnom number between 0 and 256
+    let randomNumber = Math.floor(Math.random() * 256);
+    return randomNumber;
+  }
+  let squareColor = `rgb(${randomnumber()}, ${randomnumber()}, ${randomnumber()})`;
+  return squareColor;
+};
+
 let colorChoser = document.querySelector("#color-choser");
 colorChoser.addEventListener("click", setColorMode);
 
@@ -29,7 +44,36 @@ rainbowButton.addEventListener("click", setColorMode);
 let shadeButton = document.querySelector("#shade");
 shadeButton.addEventListener("click", setColorMode);
 
-selectGridSquares.forEach((square) => {});
+let setColortoStandard = (e) => {
+  if (colorMode === "default") {
+    e.target.style.backgroundColor = "black";
+  }
+};
+
+let setColortoChosenColor = (e) => {
+  if (colorMode === "color-choser") {
+    e.target.style.backgroundColor = getColorPickerValue();
+  }
+};
+
+let setColortoRainbow = (e) => {
+  if (colorMode === "rainbow") {
+    e.target.style.backgroundColor = randomColor();
+  }
+};
+
+let setColortoShade = (e) => {
+  if (colorMode === "shade") {
+    e.target.style.backgroundColor = "grey";
+  }
+};
+
+selectGridSquares.forEach((square) => {
+  square.addEventListener("click", setColortoStandard);
+  square.addEventListener("click", setColortoChosenColor);
+  square.addEventListener("click", setColortoRainbow);
+  square.addEventListener("click", setColortoShade);
+});
 
 /* let test = document.createElement("div");
 container.appendChild(test);
