@@ -14,6 +14,8 @@ for (let i = 1; i <= 256; i++) {
 // Select all element with class square
 let selectGridSquares = document.querySelectorAll(".square");
 
+let colorMode = "default";
+
 selectGridSquares.forEach((square) => {});
 
 /* let test = document.createElement("div");
