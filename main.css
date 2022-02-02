@@ -4,7 +4,7 @@
   --font-color: #549ee2;
 }
 
-.wrapper-center {
+.wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,6 +21,42 @@
   background: rgba(72, 144, 209, 0.11);
   border-radius: 3px;
   margin-right: 5rem;
+}
+
+.controllers {
+  display: flex;
+  flex-direction: column;
+}
+
+.controller {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--square-number), 1fr);
+  grid-template-rows: repeat(var(--square-number), 1fr);
+  box-shadow: 0px 0px 11px 2px rgba(84, 158, 226, 0.25);
+  width: 500px;
+  height: auto;
+}
+
+.square {
+  width: 100%;
+  height: auto;
+  padding-bottom: 100%;
+}
+
+.square:hover {
+  background-color: black;
+}
+
+/* 
+:root {
+  --color-square: #000000;
+  --square-number: 16;
+  --font-color: #549ee2;
 }
 
 .title {
@@ -72,21 +108,6 @@
   align-items: center;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(var(--square-number), 1fr);
-  grid-template-rows: repeat(var(--square-number), 1fr);
-  box-shadow: 0px 0px 11px 2px rgba(84, 158, 226, 0.25);
-  width: 500px;
-  height: auto;
-}
-
-.square {
-  width: 100%;
-  height: auto;
-  padding-bottom: 100%;
-}
-
 .square-color {
   background-color: var(--color-square);
 }
@@ -94,3 +115,4 @@
 .square-color-hover {
   background-color: var(--color-square);
 }
+ */
