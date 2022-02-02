@@ -1,12 +1,18 @@
-let container = document.querySelector(".container");
+const container = document.querySelector(".container");
+
+// Create Grid
 let grid = document.createElement("div");
 grid.classList.add("grid");
+
 container.appendChild(grid);
 for (let i = 1; i <= 256; i++) {
   let square = document.createElement("div");
   square.classList.add("square");
   grid.appendChild(square);
 }
+
+// Select all element with class square
+let selectGridSquares = document.querySelectorAll(".square");
 
 /* let test = document.createElement("div");
 container.appendChild(test);
