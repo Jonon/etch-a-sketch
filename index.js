@@ -25,18 +25,9 @@ let getColorPickerValue = () => {
   return squareColor;
 };
 
-let randomColor = () => {
-  function randomnumber() {
-    // Get a randnom number between 0 and 256
-    let randomNumber = Math.floor(Math.random() * 256);
-    return randomNumber;
-  }
-  let squareColor = `rgb(${randomnumber()}, ${randomnumber()}, ${randomnumber()})`;
-  return squareColor;
-};
-
 let colorChoser = document.querySelector("#color-choser");
 colorChoser.addEventListener("click", setColorMode);
+colorChoser.addEventListener("change", getColorPickerValue);
 
 let rainbowButton = document.querySelector("#rainbow");
 rainbowButton.addEventListener("click", setColorMode);
