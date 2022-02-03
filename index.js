@@ -40,6 +40,10 @@ let randomColor = () => {
   return squareColor;
 };
 
+let setOpacitySquareBackground = (e) => {
+  let opacityNumber = Number(e.target.getAttribute("opacity"));
+};
+
 let colorChoser = document.querySelector("#color-choser");
 colorChoser.addEventListener("click", setColorMode);
 colorChoser.addEventListener("change", getColorPickerValue);
@@ -70,6 +74,7 @@ let setColortoRainbow = (e) => {
 
 let setColortoShade = (e) => {
   if (colorMode === "shade") {
+    setOpacitySquareBackground(e);
   }
 };
 
