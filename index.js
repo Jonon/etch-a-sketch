@@ -42,6 +42,7 @@ let randomColor = () => {
 
 let setOpacitySquareBackground = (e) => {
   let opacityNumber = Number(e.target.getAttribute("opacity"));
+  e.target.style.backgroundColor = `rgba(0, 0, 0, ${opacityNumber})`;
 };
 
 let colorChoser = document.querySelector("#color-choser");
