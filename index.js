@@ -52,6 +52,9 @@ let setOpacitySquareBackground = (e) => {
       return 0.1;
     }
   };
+
+  let shade = incrementOpacity();
+  e.target.setAttribute("opacity", shade);
 };
 
 let colorChoser = document.querySelector("#color-choser");
