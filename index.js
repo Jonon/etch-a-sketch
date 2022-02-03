@@ -48,6 +48,8 @@ let setOpacitySquareBackground = (e) => {
       opacityNumber += 0.1;
       let opacity = opacityNumber.toFixed(1);
       return opacity;
+    } else {
+      return 0.1;
     }
   };
 };
