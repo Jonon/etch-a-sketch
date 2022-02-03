@@ -45,6 +45,8 @@ let setOpacitySquareBackground = (e) => {
   e.target.style.backgroundColor = `rgba(0, 0, 0, ${opacityNumber})`;
   let incrementOpacity = (e) => {
     opacityNumber += 0.1;
+    let opacity = opacityNumber.toFixed(1);
+    return opacity;
   };
 };
 
