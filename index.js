@@ -9,6 +9,7 @@ let createGridSquares = () => {
   for (let i = 1; i <= 256; i++) {
     // Create squares
     let square = document.createElement("div");
+    square.setAttribute("opacity", 0.1);
     square.classList.add("square");
     grid.appendChild(square);
   }
@@ -69,7 +70,6 @@ let setColortoRainbow = (e) => {
 
 let setColortoShade = (e) => {
   if (colorMode === "shade") {
-    e.target.style.backgroundColor = "grey";
   }
 };
 
