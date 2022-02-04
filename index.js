@@ -27,6 +27,11 @@ let setGridSize = () => {
 
   // Set gridNumber in gloabal css variable
   document.documentElement.style.setProperty("--square-number", squareNumber);
+
+  // Calculate total squares
+  squareNumber = squareNumber * squareNumber;
+
+  createGridSquares(squareNumber);
 };
 
 gridSize.addEventListener("change", setGridSize);
