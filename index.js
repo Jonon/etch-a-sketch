@@ -34,6 +34,9 @@ let setGridSize = () => {
   createGridSquares(squareNumber);
 };
 
+// Start with a default grid
+setGridSize();
+
 gridSize.addEventListener("change", setGridSize);
 
 // Select all element with class square
