@@ -24,6 +24,9 @@ let setGridSize = () => {
   let gridSizeNumber = document.querySelector(".grid-size-number");
   // Change gridSizeNumber acordingly
   gridSizeNumber.textContent = squareNumber;
+
+  // Set gridNumber in gloabal css variable
+  document.documentElement.style.setProperty("--square-number", squareNumber);
 };
 
 gridSize.addEventListener("change", setGridSize);
