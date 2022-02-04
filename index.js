@@ -15,6 +15,88 @@ let createGridSquares = (size) => {
     square.classList.add("square");
     grid.appendChild(square);
   }
+
+  // Select all element with class square
+  let selectGridSquares = document.querySelectorAll(".square");
+
+  let colorMode = "default";
+
+  let setColorMode = (e) => {
+    colorMode = e.target.getAttribute("colorMode");
+  };
+
+  let getColorPickerValue = () => {
+    let squareColor = colorChoser.value;
+    return squareColor;
+  };
+
+  let randomColor = () => {
+    function randomnumber() {
+      // Get a randnom number between 0 and 256
+      let randomNumber = Math.floor(Math.random() * 256);
+      return randomNumber;
+    }
+    let squareColor = `rgb(${randomnumber()}, ${randomnumber()}, ${randomnumber()})`;
+    return squareColor;
+  };
+
+  let setOpacitySquareBackground = (e) => {
+    let opacityNumber = Number(e.target.getAttribute("opacity"));
+    e.target.style.backgroundColor = `rgba(0, 0, 0, ${opacityNumber})`;
+    let incrementOpacity = (e) => {
+      if (opacityNumber <= 0.9) {
+        opacityNumber += 0.1;
+        let opacity = opacityNumber.toFixed(1);
+        return opacity;
+      } else {
+        return 0.1;
+      }
+    };
+
+    let shade = incrementOpacity();
+    e.target.setAttribute("opacity", shade);
+  };
+
+  let colorChoser = document.querySelector("#color-choser");
+  colorChoser.addEventListener("click", setColorMode);
+  colorChoser.addEventListener("change", getColorPickerValue);
+
+  let rainbowButton = document.querySelector("#rainbow");
+  rainbowButton.addEventListener("click", setColorMode);
+
+  let shadeButton = document.querySelector("#shade");
+  shadeButton.addEventListener("click", setColorMode);
+
+  let setColortoStandard = (e) => {
+    if (colorMode === "default") {
+      e.target.style.backgroundColor = "black";
+    }
+  };
+
+  let setColortoChosenColor = (e) => {
+    if (colorMode === "color-choser") {
+      e.target.style.backgroundColor = getColorPickerValue();
+    }
+  };
+
+  let setColortoRainbow = (e) => {
+    if (colorMode === "rainbow") {
+      e.target.style.backgroundColor = randomColor();
+    }
+  };
+
+  let setColortoShade = (e) => {
+    if (colorMode === "shade") {
+      setOpacitySquareBackground(e);
+    }
+  };
+
+  selectGridSquares.forEach((square) => {
+    square.addEventListener("click", setColortoStandard);
+    square.addEventListener("click", setColortoChosenColor);
+    square.addEventListener("click", setColortoRainbow);
+    square.addEventListener("click", setColortoShade);
+  });
 };
 
 let setGridSize = () => {
@@ -44,138 +126,3 @@ let removeGrid = () => {
 
 gridSize.addEventListener("change", setGridSize);
 gridSize.addEventListener("click", removeGrid);
-
-// Select all element with class square
-let selectGridSquares = document.querySelectorAll(".square");
-
-let colorMode = "default";
-
-let setColorMode = (e) => {
-  colorMode = e.target.getAttribute("colorMode");
-};
-
-let getColorPickerValue = () => {
-  let squareColor = colorChoser.value;
-  return squareColor;
-};
-
-let randomColor = () => {
-  function randomnumber() {
-    // Get a randnom number between 0 and 256
-    let randomNumber = Math.floor(Math.random() * 256);
-    return randomNumber;
-  }
-  let squareColor = `rgb(${randomnumber()}, ${randomnumber()}, ${randomnumber()})`;
-  return squareColor;
-};
-
-let setOpacitySquareBackground = (e) => {
-  let opacityNumber = Number(e.target.getAttribute("opacity"));
-  e.target.style.backgroundColor = `rgba(0, 0, 0, ${opacityNumber})`;
-  let incrementOpacity = (e) => {
-    if (opacityNumber <= 0.9) {
-      opacityNumber += 0.1;
-      let opacity = opacityNumber.toFixed(1);
-      return opacity;
-    } else {
-      return 0.1;
-    }
-  };
-
-  let shade = incrementOpacity();
-  e.target.setAttribute("opacity", shade);
-};
-
-let colorChoser = document.querySelector("#color-choser");
-colorChoser.addEventListener("click", setColorMode);
-colorChoser.addEventListener("change", getColorPickerValue);
-
-let rainbowButton = document.querySelector("#rainbow");
-rainbowButton.addEventListener("click", setColorMode);
-
-let shadeButton = document.querySelector("#shade");
-shadeButton.addEventListener("click", setColorMode);
-
-let setColortoStandard = (e) => {
-  if (colorMode === "default") {
-    e.target.style.backgroundColor = "black";
-  }
-};
-
-let setColortoChosenColor = (e) => {
-  if (colorMode === "color-choser") {
-    e.target.style.backgroundColor = getColorPickerValue();
-  }
-};
-
-let setColortoRainbow = (e) => {
-  if (colorMode === "rainbow") {
-    e.target.style.backgroundColor = randomColor();
-  }
-};
-
-let setColortoShade = (e) => {
-  if (colorMode === "shade") {
-    setOpacitySquareBackground(e);
-  }
-};
-
-selectGridSquares.forEach((square) => {
-  square.addEventListener("click", setColortoStandard);
-  square.addEventListener("click", setColortoChosenColor);
-  square.addEventListener("click", setColortoRainbow);
-  square.addEventListener("click", setColortoShade);
-});
-
-/* let test = document.createElement("div");
-
-// Create sliderGridSize
-let sliderGridSize = document.createElement("input");
-sliderGridSize.setAttribute("type", "range");
-sliderGridSize.setAttribute("min", "1");
-sliderGridSize.setAttribute("max", "64");
-sliderGridSize.setAttribute("value", 16);
-
-// Create SliderHeader
-let sliderHeader = document.createElement("p");
-sliderHeader.classList.add("grid-number");
-sliderHeader.textContent = sliderGridSize.value;
-
-
-let clearGrid = (squaresToremove) => {
-  squaresToremove.forEach((element) => {
-    element.remove();
-  });
-};
-
-function createGridNumber() {
-  let gridSize = handleSliderValue();
-  sliderHeader.textContent = gridSize;
-
-  let number = gridSize;
-  number = Number(number);
-  // Set gridNumber in gloabal css variable
-  document.documentElement.style.setProperty("--square-number", number);
-  // Caclulate number
-  number = number * number;
-  return number;
-}
-
-sliderGridSizeChangeHandler = () => {
-  //Select all squares
-  let selectSquares = document.querySelectorAll(".square");
-  // Clear grid
-  clearGrid(selectSquares);
-  // chose new grid number
-  let gridNumber = createGridNumber();
-  // CreateSquares
-  let squares = createSquare(gridNumber, grid);
-  return squares;
-};
-
-function newGrid() {
-  sliderGridSize.addEventListener("change", sliderGridSizeChangeHandler);
-  // Defaultt grid
-  let squares = createSquare(256, grid);
-  return squares;
-} */
