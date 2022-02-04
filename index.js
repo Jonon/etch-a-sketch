@@ -37,7 +37,13 @@ let setGridSize = () => {
 // Start with a default grid
 setGridSize();
 
+let removeGrid = () => {
+  let grid = document.querySelector(".grid");
+  grid.remove();
+};
+
 gridSize.addEventListener("change", setGridSize);
+gridSize.addEventListener("click", removeGrid);
 
 // Select all element with class square
 let selectGridSquares = document.querySelectorAll(".square");
