@@ -17,6 +17,13 @@ let createGridSquares = (size) => {
   }
 };
 
+let setGridSize = () => {
+  // Get grid Number
+  squareNumber = gridSize.value;
+};
+
+gridSize.addEventListener("change", setGridSize);
+
 // Select all element with class square
 let selectGridSquares = document.querySelectorAll(".square");
 
