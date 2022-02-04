@@ -1,12 +1,14 @@
 const container = document.querySelector(".wrapper");
 
-let createGridSquares = () => {
+let gridSize = document.querySelector(".grid-size");
+
+let createGridSquares = (size) => {
   // Create Grid
   let grid = document.createElement("div");
   grid.classList.add("grid");
   container.appendChild(grid);
 
-  for (let i = 1; i <= 256; i++) {
+  for (let i = 1; i <= size; i++) {
     // Create squares
     let square = document.createElement("div");
     square.setAttribute("opacity", 0.1);
@@ -15,7 +17,6 @@ let createGridSquares = () => {
   }
 };
 
-createGridSquares();
 // Select all element with class square
 let selectGridSquares = document.querySelectorAll(".square");
 
