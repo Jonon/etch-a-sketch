@@ -20,6 +20,10 @@ let createGridSquares = (size) => {
 let setGridSize = () => {
   // Get grid Number
   squareNumber = gridSize.value;
+
+  let gridSizeNumber = document.querySelector(".grid-size-number");
+  // Change gridSizeNumber acordingly
+  gridSizeNumber.textContent = squareNumber;
 };
 
 gridSize.addEventListener("change", setGridSize);
